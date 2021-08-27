@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kanban-shaktiman": {
+      "hosting": {
+        "kanban": [
+          "kanban-shaktiman"
+        ]
+      }
+    }
+  }
+}
