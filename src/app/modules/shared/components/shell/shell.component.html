@@ -1,1 +1,51 @@
-<p>shell works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isMobileScreen$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isMobileScreen$ | async) ? 'over' : 'side'"
+    [opened]="false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <ng-template [ngTemplateOutlet]="navLinks"></ng-template>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenave"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isMobileScreen$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="logo" routerLink="/">📕 Kanban </span>
+      <span class="fill-space"></span>
+      <mat-nav-list *ngIf="!(isMobileScreen$ | async)" style="display: flex">
+        <ng-template [ngTemplateOutlet]="navLinks"></ng-template>
+      </mat-nav-list>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item>Slack</a>
+        <a mat-menu-item>Github</a>
+        <a mat-menu-item>Full course</a>
+        <a mat-menu-item>Youtube</a>
+      </mat-menu>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #navLinks>
+  <a mat-list-item routerLink="/" (click)="drawer.close()">🏠 Home</a>
+  <a mat-list-item routerLink="/" (click)="drawer.close()">🧑 Login</a>
+  <a mat-list-item routerLink="/" (click)="drawer.close()">🖊 Kanban demo</a>
+  <a mat-list-item routerLink="/" (click)="drawer.close()">💻 SSR demo</a>
+</ng-template>
