@@ -1,0 +1,18 @@
+<main>
+  <ng-container *ngIf="!auth.currentUser; else signOut">
+    <kanban-email-login></kanban-email-login>
+    <h3>or</h3>
+    <button type="button" mat-raised-button color="primary" kanbanGoogleSignIn>
+      Google
+    </button>
+  </ng-container>
+
+  <ng-template #signOut>
+    <h3>
+      Logged in with : <strong>{{ auth.currentUser?.displayName }}</strong>
+    </h3>
+    <button type="button" mat-button color="primary" kanbanSignOut>
+      Sign out
+    </button>
+  </ng-template>
+</main>
