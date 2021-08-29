@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'kanban',
     loadChildren: () => import('./modules/kanban/kanban.module').then(m => m.KanbanModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'customers',
+    loadChildren: () => import('./modules/customers/customers.module').then(m => m.CustomersModule),
   }
 ];
 

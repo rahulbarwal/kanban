@@ -9,10 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SharedModule } from './modules/shared/shared.module';
+import { ListPageComponent } from './modules/components/list-page/list-page.component';
+import { DetailPageComponent } from './modules/components/detail-page/detail-page.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    ListPageComponent,
+    DetailPageComponent
   ],
   imports: [
     BrowserModule,
