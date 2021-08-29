@@ -19,7 +19,7 @@ import { DetailPageComponent } from './modules/components/detail-page/detail-pag
     DetailPageComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
