@@ -23,4 +23,8 @@
       <mat-card [ngClass]="task.label || ''">{{ task.description }} </mat-card>
     </div>
   </div>
+  <button mat-icon-button color="accent" (click)="openTaskDialog()">
+    <mat-icon> add</mat-icon>
+  </button>
+  <kanban-delete-button></kanban-delete-button>
 </mat-card>

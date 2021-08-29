@@ -13,9 +13,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { ShellComponent } from './components/shell/shell.component';
+import { DeleteButtonComponent } from './components/delete-button/delete-button.component';
 
 
-const components = [ShellComponent];
+const components = [ShellComponent, DeleteButtonComponent];
 
 const modules = [
   CommonModule,
@@ -30,6 +31,7 @@ const modules = [
   MatFormFieldModule,
   MatInputModule,
   MatSnackBarModule,
+  MatIconModule,
   RouterModule
 ];
 
