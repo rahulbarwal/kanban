@@ -1,0 +1,28 @@
+.cdk-drag-placeholder {
+  opacity: 0.2;
+  margin: 10px 0px;
+}
+
+.cdk-drag-animating,
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 300ms ease;
+}
+
+.blue {
+  background-color: rgb(33, 139, 209);
+}
+.green {
+  background-color: yellowgreen;
+}
+.purple {
+  background-color: rgb(219, 70, 219);
+}
+.red {
+  background-color: rgb(209, 43, 21);
+}
+.yellow {
+  background-color: rgba(202, 176, 31, 0.904);
+}
+.gray {
+  background-color: gray;
+}
